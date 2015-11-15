@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -e
+
+node_modules/.bin/apg --strict --JavaScript=build/psr5 \
+    --in=grammars/abnf.abnf \
+    --in=grammars/psr5-type.abnf
+node_modules/.bin/js2coffee --indent 4 build/psr5.js > src/grammars/psr5.coffee

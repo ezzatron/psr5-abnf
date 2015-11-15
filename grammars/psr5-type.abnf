@@ -1,3 +1,11 @@
+; IMPORTANT: Case sensitivity
+
+; Without RFC 7405 support in the parser generator, we have to leave off case
+; sensitivity prefixes, and everything should really be defined using %d, but
+; APG is wrongly interpreting values as case-sensitive anyway, so for the
+; purposes of this document, "a" actually means %s"a", and this should be
+; reflected in any related specification documents.
+
 ; Type
 
 type-expression  =  type *("|" type)
@@ -13,6 +21,8 @@ array-expression =  "(" type-expression ")"
 generic          =  collection-type "<" [type-expression "," *SP] type-expression ">"
 collection-type  =  class-name / "array"
 
+; collection-type  =  class-name / %s"array"
+
 ; Class name
 
 class-name       =  ["\"] label *("\" label)
@@ -20,13 +30,11 @@ label            =  (ALPHA / %x7F-FF) *(ALPHA / DIGIT / %x7F-FF)
 
 ; Keywords
 
-; Until APG supports RFC 7405, we have to leave off case sensitivity prefixes
+keyword          =  "array" / "bool" / "callable" / "false" / "float" / "int"
+keyword          =/ "mixed" / "null" / "object" / "resource" / "self" / "static"
+keyword          =/ "string" / "true" / "void" / "$this"
 
 ; keyword          =  %s"array" / %s"bool" / %s"callable" / %s"false" / %s"float"
 ; keyword          =/ %s"int" / %s"mixed" / %s"null" / %s"object" / %s"resource"
 ; keyword          =/ %s"self" / %s"static" / %s"string" / %s"true" / %s"void"
 ; keyword          =/ %s"$this"
-
-keyword          =  "array" / "bool" / "callable" / "false" / "float" / "int"
-keyword          =/ "mixed" / "null" / "object" / "resource" / "self" / "static"
-keyword          =/ "string" / "true" / "void" / "$this"

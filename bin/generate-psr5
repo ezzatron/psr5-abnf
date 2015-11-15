@@ -1,4 +1,0 @@
-#!/bin/sh
-node_modules/.bin/apg --strict --JavaScript=src/parsers/psr5 \
-    --in=grammars/abnf.abnf \
-    --in=grammars/psr5-type.abnf
