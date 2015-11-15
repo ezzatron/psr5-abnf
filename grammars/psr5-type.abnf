@@ -1,0 +1,32 @@
+; Type
+
+type-expression  =  type *("|" type)
+type             =  class-name / keyword ; / array
+
+; Array
+
+array            =  (type / array-expression) "[]" / generic
+array-expression =  "(" type-expression ")"
+
+; Generic
+
+generic          =  collection-type "<" [type-expression "," *SP] type-expression ">"
+collection-type  =  class-name / "array"
+
+; Class name
+
+class-name       =  ["\"] label *("\" label)
+label            =  (ALPHA / %x7F-FF) *(ALPHA / DIGIT / %x7F-FF)
+
+; Keywords
+
+; Until APG supports RFC 7405, we have to leave off case sensitivity prefixes
+
+; keyword          =  %s"array" / %s"bool" / %s"callable" / %s"false" / %s"float"
+; keyword          =/ %s"int" / %s"mixed" / %s"null" / %s"object" / %s"resource"
+; keyword          =/ %s"self" / %s"static" / %s"string" / %s"true" / %s"void"
+; keyword          =/ %s"$this"
+
+keyword          =  "array" / "bool" / "callable" / "false" / "float" / "int"
+keyword          =/ "mixed" / "null" / "object" / "resource" / "self" / "static"
+keyword          =/ "string" / "true" / "void" / "$this"
