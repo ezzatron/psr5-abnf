@@ -1,11 +1,3 @@
-; IMPORTANT: Case sensitivity
-
-; Without RFC 7405 support in the parser generator, we have to leave off case
-; sensitivity prefixes, and everything should really be defined using %d, but
-; APG is wrongly interpreting values as case-sensitive anyway, so for the
-; purposes of this document, "a" actually means %s"a", and this should be
-; reflected in any related specification documents.
-
 ; Type
 
 type-expression  =  type *("|" type)
