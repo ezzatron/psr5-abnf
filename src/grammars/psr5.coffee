@@ -14,8 +14,8 @@ module.exports = ->
     #        REP = 6
     #        AND = 0
     #        NOT = 0
-    #        TLS = 26
-    #        TBS = 1
+    #        TLS = 10
+    #        TBS = 17
     #        TRG = 5
     # characters = [32 - 255]
     #```
@@ -466,7 +466,7 @@ module.exports = ->
         ]
     # ALT
     @rules[11].opcodes[1] =
-        type: 9
+        type: 10
         string: [
             97
             114
@@ -474,18 +474,18 @@ module.exports = ->
             97
             121
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[2] =
-        type: 9
+        type: 10
         string: [
             98
             111
             111
             108
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[3] =
-        type: 9
+        type: 10
         string: [
             99
             97
@@ -496,9 +496,9 @@ module.exports = ->
             108
             101
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[4] =
-        type: 9
+        type: 10
         string: [
             102
             97
@@ -506,9 +506,9 @@ module.exports = ->
             115
             101
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[5] =
-        type: 9
+        type: 10
         string: [
             102
             108
@@ -516,17 +516,17 @@ module.exports = ->
             97
             116
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[6] =
-        type: 9
+        type: 10
         string: [
             105
             110
             116
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[7] =
-        type: 9
+        type: 10
         string: [
             109
             105
@@ -534,18 +534,18 @@ module.exports = ->
             101
             100
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[8] =
-        type: 9
+        type: 10
         string: [
             110
             117
             108
             108
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[9] =
-        type: 9
+        type: 10
         string: [
             111
             98
@@ -554,9 +554,9 @@ module.exports = ->
             99
             116
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[10] =
-        type: 9
+        type: 10
         string: [
             114
             101
@@ -567,18 +567,18 @@ module.exports = ->
             99
             101
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[11] =
-        type: 9
+        type: 10
         string: [
             115
             101
             108
             102
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[12] =
-        type: 9
+        type: 10
         string: [
             115
             116
@@ -587,9 +587,9 @@ module.exports = ->
             105
             99
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[13] =
-        type: 9
+        type: 10
         string: [
             115
             116
@@ -598,27 +598,27 @@ module.exports = ->
             110
             103
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[14] =
-        type: 9
+        type: 10
         string: [
             116
             114
             117
             101
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[15] =
-        type: 9
+        type: 10
         string: [
             118
             111
             105
             100
         ]
-    # TLS
+    # TBS
     @rules[11].opcodes[16] =
-        type: 9
+        type: 10
         string: [
             36
             116
@@ -626,7 +626,7 @@ module.exports = ->
             105
             115
         ]
-    # TLS
+    # TBS
     return
 
 #```
@@ -669,12 +669,8 @@ module.exports = ->
 # 
 # ; Keywords
 # 
-# keyword          =  "array" / "bool" / "callable" / "false" / "float" / "int"
-# keyword          =/ "mixed" / "null" / "object" / "resource" / "self" / "static"
-# keyword          =/ "string" / "true" / "void" / "$this"
-# 
-# ; keyword          =  %s"array" / %s"bool" / %s"callable" / %s"false" / %s"float"
-# ; keyword          =/ %s"int" / %s"mixed" / %s"null" / %s"object" / %s"resource"
-# ; keyword          =/ %s"self" / %s"static" / %s"string" / %s"true" / %s"void"
-# ; keyword          =/ %s"$this"
+# keyword          =  %s"array" / %s"bool" / %s"callable" / %s"false" / %s"float"
+# keyword          =/ %s"int" / %s"mixed" / %s"null" / %s"object" / %s"resource"
+# keyword          =/ %s"self" / %s"static" / %s"string" / %s"true" / %s"void"
+# keyword          =/ %s"$this"
 #```

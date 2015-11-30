@@ -30,11 +30,7 @@ label            =  (ALPHA / %x7F-FF) *(ALPHA / DIGIT / %x7F-FF)
 
 ; Keywords
 
-keyword          =  "array" / "bool" / "callable" / "false" / "float" / "int"
-keyword          =/ "mixed" / "null" / "object" / "resource" / "self" / "static"
-keyword          =/ "string" / "true" / "void" / "$this"
-
-; keyword          =  %s"array" / %s"bool" / %s"callable" / %s"false" / %s"float"
-; keyword          =/ %s"int" / %s"mixed" / %s"null" / %s"object" / %s"resource"
-; keyword          =/ %s"self" / %s"static" / %s"string" / %s"true" / %s"void"
-; keyword          =/ %s"$this"
+keyword          =  %s"array" / %s"bool" / %s"callable" / %s"false" / %s"float"
+keyword          =/ %s"int" / %s"mixed" / %s"null" / %s"object" / %s"resource"
+keyword          =/ %s"self" / %s"static" / %s"string" / %s"true" / %s"void"
+keyword          =/ %s"$this"
